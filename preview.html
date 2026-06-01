@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>암모니아 합성 공정 최적화 시뮬레이터</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="container">
+<h1>🧪 암모니아 합성 공정 최적화 시뮬레이터</h1>
+<div class="reaction">N₂ + 3H₂ ⇌ 2NH₃</div>
+<p class="subtitle">온도, 압력, 촉매 효율을 조절하여 최적의 암모니아 생산 조건을 찾아보세요.</p>
+
+<div class="card">
+<label>초기 온도 (℃)
+<input type="range" id="startTemp" min="400" max="550" value="500">
+<span id="startValue">500</span>
+</label>
+
+<label>최종 온도 (℃)
+<input type="range" id="endTemp" min="350" max="500" value="400">
+<span id="endValue">400</span>
+</label>
+
+<label>압력 (atm)
+<input type="range" id="pressure" min="100" max="300" value="200">
+<span id="pressureValue">200</span>
+</label>
+
+<label>촉매 효율 (%)
+<input type="range" id="catalyst" min="50" max="100" value="80">
+<span id="catalystValue">80</span>
+</label>
+
+<div class="buttons">
+<button onclick="runSimulation()">▶ 시뮬레이션 실행</button>
+<button onclick="applyOptimal()">🎯 최적 조건 적용</button>
+</div>
+</div>
+
+<div class="result-card">
+<h2>🧪 암모니아 수율</h2>
+<div id="yieldValue" class="yield">0%</div>
+
+<h2>🏆 공정 효율</h2>
+<div id="grade" class="grade">-</div>
+
+<div id="badge"></div>
+<div id="analysis" class="analysis">조건을 설정하고 실행해보세요.</div>
+</div>
+
+<div class="chart-card">
+<canvas id="yieldChart"></canvas>
+</div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
